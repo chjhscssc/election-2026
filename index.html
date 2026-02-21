@@ -10,7 +10,9 @@
         .loading { color: #888; font-style: italic; }
         h2 { color: #003a7c; font-size: 1.5rem; margin-top: 10px; }
         p { color: #444; line-height: 1.8; font-size: 1.05rem; }
-        .notice { background: #fff9db; padding: 10px; border-radius: 5px; border-left: 4px solid #fcc419; margin-top: 20px; text-align: left; }
+        .notice { background: #fff9db; padding: 15px; border-radius: 5px; border-left: 4px solid #fcc419; margin-top: 20px; text-align: left; }
+        .link-text { display: block; margin-top: 10px; color: #003a7c; text-decoration: none; font-weight: bold; border-bottom: 1px solid #003a7c; padding-bottom: 2px; }
+        .link-text:hover { color: #1a73e8; border-color: #1a73e8; }
     </style>
 </head>
 <body>
@@ -20,8 +22,8 @@
 </div>
 
 <script>
-    // 佳杰，請將下方網址替換成你的 Google Apps Script 網址
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbw35RJmb5Qor2EPGoHOumk4dKSG-gyAkZo6Rpow-0gcoIdw1Kpr3eN7sf9pc76H5Go/exec";
+    // 佳杰，請記得將下方網址替換成你的 Google Apps Script 網址
+    const scriptUrl = "YOUR_GOOGLE_SCRIPT_URL";
 
     const urlParams = new URLSearchParams(window.location.search);
     const candidateId = urlParams.get('id');
@@ -29,7 +31,6 @@
     if (!candidateId) {
         document.getElementById('main-card').innerHTML = "<h2>連結無效</h2><p>請洽詢選舉委員會</p>";
     } else {
-        // 發送請求給 Google Sheets
         fetch(`${scriptUrl}?id=${candidateId}`)
             .then(response => {
                 document.getElementById('main-card').innerHTML = `
@@ -38,7 +39,11 @@
                     <p><strong>臺北市私立靜心高級中學第七屆學生會正副會長選舉</strong></p>
                     <div class="notice">
                         📢 <strong>提醒：</strong><br>
-                        請務必注意相關時程並認真準備政見發表會。
+                        請務必注意相關時程並認真準備政見發表會。<br>
+                        並請仔細閱讀相關辦法。
+                        <a class="link-text" href="https://drive.google.com/file/d/1YhKXQ6DErAlyJMRieyuaK-dT08AbU-kf/view?usp=drive_link" target="_blank">
+                            請點擊我前往『靜心高中學生會會長、副會長選舉罷免辦法』
+                        </a>
                     </div>
                 `;
             })
