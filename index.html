@@ -1,94 +1,52 @@
-{\rtf1\ansi\ansicpg950\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset136 PingFangTC-Regular;\f2\fnil\fcharset0 AppleColorEmoji;
-}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww28900\viewh15760\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>參選確認 | 靜心高級中學</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", sans-serif; background-color: #f0f4f8; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 450px; text-align: center; border-top: 6px solid #003a7c; }
+        .loading { color: #888; font-style: italic; }
+        h2 { color: #003a7c; font-size: 1.5rem; margin-top: 10px; }
+        p { color: #444; line-height: 1.8; font-size: 1.05rem; }
+        .notice { background: #fff9db; padding: 10px; border-radius: 5px; border-left: 4px solid #fcc419; margin-top: 20px; text-align: left; }
+    </style>
+</head>
+<body>
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="zh-TW">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>
-\f1 \'b0\'d1\'bf\'ef\'bd\'54\'bb\'7b
-\f0  | 
-\f1 \'c0\'52\'a4\'df\'b0\'aa\'af\'c5\'a4\'a4\'be\'c7
-\f0 </title>\
-    <style>\
-        body \{ font-family: "Microsoft JhengHei", sans-serif; background-color: #f0f4f8; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; \}\
-        .card \{ background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 450px; text-align: center; border-top: 6px solid #003a7c; \}\
-        .loading \{ color: #888; font-style: italic; \}\
-        h2 \{ color: #003a7c; font-size: 1.5rem; margin-top: 10px; \}\
-        p \{ color: #444; line-height: 1.8; font-size: 1.05rem; \}\
-        .notice \{ background: #fff9db; padding: 10px; border-radius: 5px; border-left: 4px solid #fcc419; margin-top: 20px; text-align: left; \}\
-    </style>\
-</head>\
-<body>\
-\
-<div class="card" id="main-card">\
-    <div id="status-msg" class="loading">
-\f2 \uc0\u9203 
-\f0  
-\f1 \'a5\'bf\'a6\'62\'b3\'73\'bd\'75\'a6\'dc\'a8\'74\'b2\'ce\'a1\'41\'bd\'d0\'b5\'79\'ad\'d4
-\f0 ...</div>\
-</div>\
-\
-<script>\
-    // 
-\f1 \'a8\'ce\'aa\'4e\'a1\'41\'bd\'d0\'b1\'4e\'a4\'55\'a4\'e8\'ba\'f4\'a7\'7d\'b4\'c0\'b4\'ab\'a6\'a8\'a7\'41\'aa\'ba
-\f0  Google Apps Script 
-\f1 \'ba\'f4\'a7\'7d
-\f0 \
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbw35RJmb5Qor2EPGoHOumk4dKSG-gyAkZo6Rpow-0gcoIdw1Kpr3eN7sf9pc76H5Go/exec";\
-\
-    const urlParams = new URLSearchParams(window.location.search);\
-    const candidateId = urlParams.get('id');\
-\
-    if (!candidateId) \{\
-        document.getElementById('main-card').innerHTML = "<h2>
-\f1 \'b3\'73\'b5\'b2\'b5\'4c\'ae\'c4
-\f0 </h2><p>
-\f1 \'bd\'d0\'ac\'a2\'b8\'df\'bf\'ef\'c1\'7c\'a9\'65\'ad\'fb\'b7\'7c
-\f0 </p>";\
-    \} else \{\
-        // 
-\f1 \'b5\'6f\'b0\'65\'bd\'d0\'a8\'44\'b5\'b9
-\f0  Google Sheets\
-        fetch(`$\{scriptUrl\}?id=$\{candidateId\}`)\
-            .then(response => \{\
-                document.getElementById('main-card').innerHTML = `\
-                    <div style="font-size: 40px;">
-\f2 \uc0\u9989 
-\f0 </div>\
-                    <h2>
-\f1 \'a4\'77\'bd\'54\'bb\'7b\'b0\'d1\'bf\'ef
-\f0 </h2>\
-                    <p><strong>
-\f1 \'bb\'4f\'a5\'5f\'a5\'ab\'a8\'70\'a5\'df\'c0\'52\'a4\'df\'b0\'aa\'af\'c5\'a4\'a4\'be\'c7\'b2\'c4\'a4\'43\'a9\'a1\'be\'c7\'a5\'cd\'b7\'7c\'a5\'bf\'b0\'c6\'b7\'7c\'aa\'f8\'bf\'ef\'c1\'7c
-\f0 </strong></p>\
-                    <div class="notice">\
-                        
-\f2 \uc0\u55357 \u56546 
-\f0  <strong>
-\f1 \'b4\'a3\'bf\'f4\'a1\'47
-\f0 </strong><br>\
-                        
-\f1 \'bd\'d0\'b0\'c8\'a5\'b2\'aa\'60\'b7\'4e\'ac\'db\'c3\'f6\'ae\'c9\'b5\'7b\'a8\'c3\'bb\'7b\'af\'75\'b7\'c7\'b3\'c6\'ac\'46\'a8\'a3\'b5\'6f\'aa\'ed\'b7\'7c\'a1\'43
-\f0 \
-                    </div>\
-                `;\
-            \})\
-            .catch(error => \{\
-                document.getElementById('main-card').innerHTML = "<h2>
-\f1 \'a8\'74\'b2\'ce\'bf\'f9\'bb\'7e
-\f0 </h2><p>
-\f1 \'bd\'d0\'ad\'ab\'b7\'73\'c2\'49\'c0\'bb\'b3\'73\'b5\'b2\'a9\'ce\'c1\'70\'c3\'b4\'ba\'de\'b2\'7a\'ad\'fb
-\f0 </p>";\
-            \});\
-    \}\
-</script>\
-\
-</body>\
-</html>}
+<div class="card" id="main-card">
+    <div id="status-msg" class="loading">⏳ 正在連線至系統，請稍候...</div>
+</div>
+
+<script>
+    // 佳杰，請將下方網址替換成你的 Google Apps Script 網址
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbw35RJmb5Qor2EPGoHOumk4dKSG-gyAkZo6Rpow-0gcoIdw1Kpr3eN7sf9pc76H5Go/exec";
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const candidateId = urlParams.get('id');
+
+    if (!candidateId) {
+        document.getElementById('main-card').innerHTML = "<h2>連結無效</h2><p>請洽詢選舉委員會</p>";
+    } else {
+        // 發送請求給 Google Sheets
+        fetch(`${scriptUrl}?id=${candidateId}`)
+            .then(response => {
+                document.getElementById('main-card').innerHTML = `
+                    <div style="font-size: 40px;">✅</div>
+                    <h2>已確認參選</h2>
+                    <p><strong>臺北市私立靜心高級中學第七屆學生會正副會長選舉</strong></p>
+                    <div class="notice">
+                        📢 <strong>提醒：</strong><br>
+                        請務必注意相關時程並認真準備政見發表會。
+                    </div>
+                `;
+            })
+            .catch(error => {
+                document.getElementById('main-card').innerHTML = "<h2>系統錯誤</h2><p>請重新點擊連結或聯繫管理員</p>";
+            });
+    }
+</script>
+
+</body>
+</html>
